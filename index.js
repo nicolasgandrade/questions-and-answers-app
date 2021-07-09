@@ -1,8 +1,5 @@
 const express = require('express');
 const app = express();
-const session = require('express-session')
-const bcypt = require('bcryptjs')
-const passport = require('passport')
 
 const flash = require('connect-flash')
 
@@ -12,10 +9,7 @@ const connection = require('./database/database');
 
 const Questions = require('./database/Questions');
 const Answers = require('./database/Answers')
-const Users = require('./database/Users')
 
-const admin = require('./routes/admin')
-const users = require('./routes/users')
 
 // Database
 connection.authenticate().then(() => {
@@ -33,26 +27,6 @@ app.use(express.static('public'));
 //Body-parser
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-
-//Session
-app.use(session({
-    secret: '12345',
-    resave: true,
-    saveUninitialized: true
-}))
-
-//Flash
-app.use(flash())
-
-//Middleware
-app.use((req, res, next) => {
-    res.locals.success_msg = req.flash('success_msg')
-    res.locals.error_msg = req.flash('error_msg')
-    res.locals.error = req.flash('error')
-    // res.locals.user = req.user || null
-    next()
-})
-
 
 // Routes
 
@@ -115,14 +89,6 @@ app.post('/answer', (req, res) => {
     });
 });
 
-
-
-
-// Admin routes
-app.use('/admin', admin)
-
-// Users routes
-app.use('/users', users)
 
 // Server
 app.listen(9091, () => {
