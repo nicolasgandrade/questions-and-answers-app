@@ -7,8 +7,24 @@
 &nbsp;
 
 
-This is a Q&A App made with NodeJS, MySQL server, EJS view engine and Bootstrap. My main objective was to create a web app, where the user could ask anything, and the other users could answer the questions.
+This is a Q&A App made with NodeJS, MySQL server, EJS view engine and Bootstrap. My main objective was to create a web app, where the user could ask anything, and the other users could answer the questions anonymously.
 ### Features:
 
 - [x] Ask questions
 - [x] Answer questions
+- [x] Show the question and it's respective answers
+- [X] List questions from most current to oldest
+
+### Get started:
+
+You can start the application with:
+````
+node index.js
+````
+inside the project's root folder.
+Then access ````localhost:8081```` in your browser.
+
+### Routes:
+
+- /
+- /question/:id
