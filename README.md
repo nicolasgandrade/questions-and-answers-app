@@ -7,12 +7,8 @@
 &nbsp;
 
 
-This is a Q&A App made with NodeJS, MySQL server, EJS view engine and Bootstrap. My main objective was to create a web app, where the user could ask anything, and the other users could answer the questions. Other than that, I would like to include admin options that could be able to moderate the posts (remove the questions and/or the answers).
+This is a Q&A App made with NodeJS, MySQL server, EJS view engine and Bootstrap. My main objective was to create a web app, where the user could ask anything, and the other users could answer the questions.
 ### Features:
 
-- [x] Ask a question
-- [x] Answer the question
-- [x] Register new user
-- [ ] Login
-- [ ] Admin options
-- [ ] Search post
+- [x] Ask questions
+- [x] Answer questions
